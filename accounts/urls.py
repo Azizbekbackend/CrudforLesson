@@ -5,6 +5,9 @@ from .views import (
     login_page,
     home,login,
     logout_user,
+    user_delete,
+    user_edit,
+    user_edite_save
 )
 
 
@@ -14,5 +17,8 @@ urlpatterns = [
     path('login', login, name="login"),
     path('logout_user',logout_user,name="logout_user"),
     path('home/',home, name="home"),
+    path('home/<int:id>',user_delete, name="user_delete"),
+    path('home/edit/<int:id>',user_edit, name="user_edit"),
+    path('user_edite_save',user_edite_save, name="user_edite_save"),
     path('',login_page,name="login"),
 ]
